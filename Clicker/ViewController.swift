@@ -8,42 +8,43 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // MARK: properties
+    
+    // MARK: - properties
+    
     private let counterPrefixText = "Значение счетчика"
     private var countClicks: Int = 0
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var clickCounterLabel: UILabel!
     @IBOutlet weak var clickerButton: UIButton!
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configStorybord()
+        configStoryboard()
     }
     
-    // MARK: Private methods
-    // начальные настройки экрана
-    private func configStorybord() {
+    // MARK: - Private methods
+    
+    private func configStoryboard() {
         updateCounterLabel()
         clickerButton.setTitle("Тыкать тут", for: .normal)
     }
     
-    // обновление значения в Label
     private func updateCounterLabel() {
         clickCounterLabel.text = "\(self.counterPrefixText): \(self.countClicks)"
     }
     
-    // увеличение счетчика кликов
     private func counterIncrements() {
         self.countClicks += 1
         updateCounterLabel()
     }
     
-    // MARK: IBActions
-    // клик по кнопке
+    // MARK: - IBActions
+    
     @IBAction func touchDownClickerButton(_ sender: Any) {
         counterIncrements()
     }
 }
-
