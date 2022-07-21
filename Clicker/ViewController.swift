@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func touchDownClickerButton(_ sender: Any) {
+    @IBAction private func touchDownClickerButton(_ sender: Any) {
         counterIncrements()
     }
 }
